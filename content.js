@@ -1,4 +1,4 @@
-alert("extension running");
+console.log("extension running");
 
 chrome.runtime.onMessage.addListener(receiver);
 
