@@ -5,16 +5,13 @@ document.addEventListener('DOMContentLoaded', function showWordDef() {
     if (word.length > 0) {
         // console.log(word);
 
-        endpoint = 'entries';
-        language_code = 'en-us';
-
-        let url = `https://od-api.oxforddictionaries.com/api/v2/${endpoint}/${language_code}/${word}`.toLowerCase();
+        let apiKey = '';
+        let url = `https://owlbot.info/api/v4/dictionary/${word}`.toLowerCase();
         
         fetch(url, {
             method: 'GET',
             headers: {
-                "app_id": '', 
-                "app_key": ''
+                "Authorization": apiKey
             }
         })
         .then((response) => {
@@ -22,10 +19,14 @@ document.addEventListener('DOMContentLoaded', function showWordDef() {
         })
         .then((data) => {
             // console.log(data);
-            document.getElementById("definitionArea").innerText = data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0];
+            document.getElementById("definitionArea").innerText = data.definitions[0].definition;
+            document.getElementById("owlUrl").setAttribute('href', `https://owlbot.info/?q=${word}`);
+            document.getElementById("owlUrl").setAttribute('target', `https://owlbot.info/?q=${word}`);
         })
         .catch((error) => {
             document.getElementById("definitionArea").innerText = 'No definition found (Choose another word or refresh site)';
+            document.getElementById("owlUrl").setAttribute('href', `https://owlbot.info/`);
+            document.getElementById("owlUrl").setAttribute('target', `https://owlbot.info/`);
         });
     }
 });
