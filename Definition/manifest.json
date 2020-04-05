@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Find Definition",
+    "name": "Find Definition (Highlight and Ctrl+Space)",
     "version": "1.0.0",
   
-    "description": "Find Definition",
+    "description": "Find Definition (Highlight and Ctrl+Space)",
     "icons": {"128": "plane.png"},
   
     "browser_action": {
@@ -29,17 +29,10 @@
     "permissions": ["activeTab"],
 
     "commands": {
-        "toggle-feature": {
-          "suggested_key": {
-            "default": "Ctrl+Shift+Y",
-            "mac": "MacCtrl+Shift+Y"
-           },
-          "description": "Send a 'toggle-feature' event to the extension"
-        },
         "_execute_browser_action": {
           "suggested_key": {
-            "default": "Ctrl+Shift+F",
-            "mac": "MacCtrl+Shift+F"
+            "default": "Ctrl+Space",
+            "mac": "MacCtrl+Space"
           }
         }
       }

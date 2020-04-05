@@ -15,7 +15,7 @@
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
             crossorigin="anonymous"
         />
-        <title>Popup Tab</title>
+        <script type="text/javascript" src="popup.js"></script>
         <style>
             body {
                 font-family: 'Segoe UI', Tahoma;
@@ -33,11 +33,14 @@
                 margin: 0px;
                 color:rgb(43, 74, 74);
             }
-
-            .modal-icons{
+            
+            .modal-definition{
                 border-top: 0.5px solid;
-                height: 50px;
                 width: 100%;
+                margin-bottom: 10px;
+                margin-left: 5px;
+                margin-right: 5px;
+                margin-top: 5px;
             }
         </style>
         <script src="popup.js"></script>
@@ -45,18 +48,16 @@
     <body>
         <div class="modal-header">
             <h1 class="logo">
-                <img src="plane.png" alt="Fly" class="logo-icon" height="20px" width="20px"> My Links 
-                <span class="version">(1.0.0)</span>
+                <img src="plane.png" alt="Fly" class="logo-icon" height="20px" width="20px"> 
+                Definition
+                <a href="https://github.com/jha-prateek" target="_blank">
+                    <i class="fa fa-github" style="color:rgb(52, 99, 110);"></i>
+                </a>
             </h1>
         </div>  
-        <div class="modal-icons">
-            <div class="flex-container">
-                <div class="flex">
-                    <a href="https://github.com/jha-prateek" target="_blank">
-                        <i class="fa fa-github" style="color:rgb(52, 99, 110); margin-left: 15px; "></i>
-                    </a>
-                </div>
-            </div>
-        </div>  
+        <div class="modal-definition">
+            <p id="definitionArea">Select something to find out definition.</p>
+        </div> 
+        <br>
     </body>
 </html>
