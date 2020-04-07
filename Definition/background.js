@@ -29,7 +29,9 @@ function installScript(details){
             },
             result => {
                 const lastErr = chrome.runtime.lastError;
-                if (lastErr) console.error('tab: ' + tabs[index].id + ' lastError: ' + JSON.stringify(lastErr));
+                if (lastErr) {
+                    console.error('tab: ' + tabs[index].id + ' lastError: ' + JSON.stringify(lastErr));
+                }
             })
         }
     });    
