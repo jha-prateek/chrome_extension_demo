@@ -5,7 +5,7 @@ var orphanMessageId = chrome.runtime.id + 'orphanCheck';
 window.dispatchEvent(new Event(orphanMessageId));
 window.addEventListener(orphanMessageId, unregisterOrphan);
 
-// Attac new event listener for highlighted text
+// Attach new event listener for highlighted text
 window.addEventListener('mouseup', getSelectedText);
 
 function unregisterOrphan(){

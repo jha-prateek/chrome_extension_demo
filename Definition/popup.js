@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function showWordDef() {
         .then((data) => {
             // console.log(data);
             document.getElementById("definitionArea").innerText = data.definitions[0].definition;
-            document.getElementById("owlUrl").setAttribute('href', `https://owlbot.info/?q=${word}`);
-            document.getElementById("owlUrl").setAttribute('target', `https://owlbot.info/?q=${word}`);
+            document.getElementById("searchWeb").setAttribute('href', `https://www.google.com/search?q=define+${word}`);
+            document.getElementById("searchWeb").setAttribute('target', `https://www.google.com/search?q=define+${word}`);
         })
         .catch((error) => {
             document.getElementById("definitionArea").innerText = 'No definition found (Choose another word or refresh site)';
-            document.getElementById("owlUrl").setAttribute('href', `https://owlbot.info/`);
-            document.getElementById("owlUrl").setAttribute('target', `https://owlbot.info/`);
+            document.getElementById("searchWeb").setAttribute('href', `https://www.google.com/search?q=define+${word}`);
+            document.getElementById("searchWeb").setAttribute('target', `https://www.google.com/search?q=define+${word}`);
         });
     }
 });
