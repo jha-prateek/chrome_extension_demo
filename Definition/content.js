@@ -1,26 +1,8 @@
 
 // console.log("definition extension running");
-// Detach existing content.js
-var orphanMessageId = chrome.runtime.id + 'orphanCheck';
-window.dispatchEvent(new Event(orphanMessageId));
-window.addEventListener(orphanMessageId, unregisterOrphan);
 
-// Attach new event listener for highlighted text
-window.addEventListener('mouseup', getSelectedText);
-
-function unregisterOrphan(){
-    if (chrome.i18n) {
-    // console.log('No new Content Script Detected');
-        return false;
-    }
-    // console.log('New Content Script Detected');
-    window.removeEventListener(orphanMessageId, unregisterOrphan);
-    window.removeEventListener('mouseup', getSelectedText);
-    return true;
-}
-
-function getSelectedText() {
-    let selectedText = window.getSelection().toString().trim();
+window.addEventListener('mouseup', function getSelectedText() {
+    let selectedText = window.getSelection().toString().trim();    
     // console.log(selectedText);
     if (selectedText.length > 0) {
         let message = {
@@ -28,4 +10,4 @@ function getSelectedText() {
         };
         chrome.runtime.sendMessage(message);
     }
-}
+});
