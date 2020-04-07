@@ -1,6 +1,5 @@
 
 // console.log("definition extension running");
-
 // Detach existing content.js
 var orphanMessageId = chrome.runtime.id + 'orphanCheck';
 window.dispatchEvent(new Event(orphanMessageId));
@@ -11,10 +10,10 @@ window.addEventListener('mouseup', getSelectedText);
 
 function unregisterOrphan(){
     if (chrome.i18n) {
-        // console.log('Already existing');
+    // console.log('No new Content Script Detected');
         return false;
     }
-    // console.log('Detaching');
+    // console.log('New Content Script Detected');
     window.removeEventListener(orphanMessageId, unregisterOrphan);
     window.removeEventListener('mouseup', getSelectedText);
     return true;

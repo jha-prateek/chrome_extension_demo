@@ -13,7 +13,10 @@
     
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
             "js": ["content.js"]
         }
     ],
@@ -24,7 +27,8 @@
 
     "permissions": [
         "tabs",
-        "<all_urls>"
+        "http://*/*",
+        "https://*/*"
     ],
 
     "commands": {
