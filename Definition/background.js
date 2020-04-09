@@ -15,7 +15,7 @@ function receiver(request, sender, sendResponse) {
     word = request.text;
 }
 
-// Installing contentScript in all the tabs 
+// Installing contentScript in all open tabs
 function installScript(details){
     // console.log('Installing content script in all tabs.');
     let params = {
