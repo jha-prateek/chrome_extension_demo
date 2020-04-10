@@ -1,4 +1,4 @@
-## Definition Finder (v1.0.0)
+## <img src="finder_128.png" width="30"/> Easy Definition (v1.0.0)
  It's a simple chrome extenstion to quickly get the meaning of higlighted text on currently opened tab.
  
 ## How to use:
