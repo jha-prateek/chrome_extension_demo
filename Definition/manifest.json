@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "Find Definition (Highlight and Ctrl+Space)",
+    "name": "Easy Definition (Highlight and Ctrl+Space)",
     "version": "1.0.0",
   
-    "description": "Find Definition (Highlight and Ctrl+Space)",
-    "icons": {"128": "plane.png"},
+    "description": "Easy Definition (Highlight and Ctrl+Space)",
+    "icons": {"128": "finder_128.png"},
   
     "browser_action": {
-        "default_icon": "plane.png",
+        "default_icon": "finder_128_popup.png",
         "default_popup": "popup.html"     
     },
     
