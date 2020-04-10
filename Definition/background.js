@@ -22,17 +22,22 @@ function installScript(details){
         currentWindow: true
     };
     chrome.tabs.query(params, function gotTabs(tabs){
-        let contentjsFile = chrome.runtime.getManifest().content_scripts[0].js[0];
+        const contentjsFile = chrome.runtime.getManifest().content_scripts[0].js[0];
+        
+        // For developers: No error when refresing in chrome://extensions
+        const regex = RegExp('chrome*');
         for (let index = 0; index < tabs.length; index++) {
-            chrome.tabs.executeScript(tabs[index].id, {
-                file: contentjsFile
-            },
-            result => {
-                const lastErr = chrome.runtime.lastError;
-                if (lastErr) {
-                    console.error('tab: ' + tabs[index].id + ' lastError: ' + JSON.stringify(lastErr));
-                }
-            })
+            if(!regex.test(tabs[index].url)){
+                chrome.tabs.executeScript(tabs[index].id, {
+                    file: contentjsFile
+                },
+                result => {
+                    const lastErr = chrome.runtime.lastError;
+                    if (lastErr) {
+                        console.error('tab: ' + tabs[index].id + ' lastError: ' + JSON.stringify(lastErr));
+                    }
+                })
+            }
         }
     });    
 }
