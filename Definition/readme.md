@@ -8,11 +8,12 @@
 ## !Note
  Right now it's limited to single word only
 
-## Contribution:
+## Development:
  Open for new ideas and contributions.
+ Shoutout to https://owlbot.info/
 
-### To Install:
-    - In Chrome web browser go to chrome://extensions
-    - Switch on Developer Mode
-    - Click on Load Unpacked
-    - Select the Directory of extension directory
+### To Install(Chrome):
+ - In Chrome web browser go to chrome://extensions
+ - Switch on Developer Mode
+ - Click on Load Unpacked
+ - Select the Directory of extension directory

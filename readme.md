@@ -7,3 +7,9 @@
 
 ## Contribution:
  Open for new ideas and contributions.
+ 
+### To Install(Chrome):
+ - In Chrome web browser go to chrome://extensions
+ - Switch on Developer Mode
+ - Click on Load Unpacked
+ - Select the Directory of extension directory
